@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="languages">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="软件开发整体介绍软件开发流程 角色分工 软件环境 项目项目介绍  产品原型页面效果  技术选型 开发环境搭建前端环境 后端环境     Git 数据库环境 前后端联调       完善登录功能（加密密码）  导入接口文档 用yapi导入接口文档 Swagger   通过这个功能可以查看接口文档和测试   新增员工需求分析和设计   代码  测试（视频多看）完善   Threadlocal  员工分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="苍穹外卖">
+<meta property="og:url" content="http://example.com/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/index.html">
+<meta property="og:site_name" content="CYA&#39;s Blog">
+<meta property="og:description" content="软件开发整体介绍软件开发流程 角色分工 软件环境 项目项目介绍  产品原型页面效果  技术选型 开发环境搭建前端环境 后端环境     Git 数据库环境 前后端联调       完善登录功能（加密密码）  导入接口文档 用yapi导入接口文档 Swagger   通过这个功能可以查看接口文档和测试   新增员工需求分析和设计   代码  测试（视频多看）完善   Threadlocal  员工分">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="article:published_time" content="2025-05-29T09:48:27.000Z">
+<meta property="article:modified_time" content="2025-08-01T08:41:11.115Z">
+<meta property="article:author" content="CYA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/404.jpg">
+
+
+<title >苍穹外卖</title>
+
+<!-- Favicon -->
+
+    <link href='/img/favicon.svg?v=2.2.6' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/img/favicon.svg?v=2.2.6' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"CYA","root":"/","typed_text":["一位笨笨的开发者"],"theme_version":"2.2.6","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"/img/favicon.svg","icon16":"/img/favicon.svg","icon32":"/img/favicon.svg","apple_touch_icon":null,"webmanifest":null,"visibilitychange":false,"hidden":"/failure.ico","show_text":"(/≧▽≦/)咦！又好了！","hide_text":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"},"danmu":{"enable":true,"el":".trm-banner","avatar":false,"delayRange":5000,"speed":80},"search":{"enable":true,"type":"local","href":"https://www.google.com/search?q=site:","domain":null,"path":"search.json"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2025-08-01 16:41:11"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.2.6" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+
+ 
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/img/favicon.svg">
+    
+    
+        <div class="trm-logo-text">
+            CYA&#39;s<span>Blog</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/archives/" target="">
+                    归档
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+    
+    <div id="trm-search-btn" class="trm-search-btn">
+        <i class="iconfont fas fa-search"></i>
+    </div>
+     
+
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner video cover -->
+    <video autoplay="autoplay" loop muted playsinline webkit-playinginline class="trm-banner-cover">
+        <source src="/video/123.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        Your browser does not support HTML5 video.
+    </video>
+    <!-- banner video cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            苍穹外卖
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2025
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="/img/avatar.jpg">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        CYA
+    </h5>
+    
+        <div class="trm-label">
+            I`m
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com" title="Github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+        <a href="https://gitee.com/cya544" title="Gitee" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-google"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                地址:
+            </div>
+            <div class="trm-label trm-label-light">
+                Mars
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            05/29
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            17:48
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            CYA
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="软件开发整体介绍"><a href="#软件开发整体介绍" class="headerlink" title="软件开发整体介绍"></a>软件开发整体介绍</h1><h2 id="软件开发流程"><a href="#软件开发流程" class="headerlink" title="软件开发流程"></a>软件开发流程</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250529215759695.png" alt="image-20250529215759695.png"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="角色分工"><a href="#角色分工" class="headerlink" title="角色分工"></a>角色分工</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531115221521.png" alt="image-20250531115221521"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="软件环境"><a href="#软件环境" class="headerlink" title="软件环境"></a>软件环境</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531115345093.png" alt="image-20250531115345093"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531115631711.png" alt="image-20250531115631711"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531115729943.png" alt="image-20250531115729943"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="产品原型"><a href="#产品原型" class="headerlink" title="产品原型"></a>产品原型</h2><p>页面效果</p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531120328780.png" alt="image-20250531120328780"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531120509711.png" alt="image-20250531120509711"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h1><h2 id="前端环境"><a href="#前端环境" class="headerlink" title="前端环境"></a>前端环境</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531132330179.png" alt="image-20250531132330179"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="后端环境"><a href="#后端环境" class="headerlink" title="后端环境"></a>后端环境</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531132430665.png" alt="image-20250531132430665"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531133234255.png" alt="image-20250531133234255"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531135453218.png" alt="image-20250531135453218"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531135516872.png" alt="image-20250531135516872"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531135933719.png" alt="image-20250531135933719"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531140849863.png" alt="image-20250531140849863"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="数据库环境"><a href="#数据库环境" class="headerlink" title="数据库环境"></a>数据库环境</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531172230786.png" alt="image-20250531172230786"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="前后端联调"><a href="#前后端联调" class="headerlink" title="前后端联调"></a>前后端联调</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531181636895.png" alt="image-20250531181636895"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531182206676.png" alt="image-20250531182206676"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531182409592.png" alt="image-20250531182409592"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531182707314.png" alt="image-20250531182707314"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531182934685.png" alt="image-20250531182934685"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531183200761.png" alt="image-20250531183200761"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531184401119.png" alt="image-20250531184401119"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="完善登录功能（加密密码）"><a href="#完善登录功能（加密密码）" class="headerlink" title="完善登录功能（加密密码）"></a>完善登录功能（加密密码）</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531184714608.png" alt="image-20250531184714608"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531184832375.png" alt="image-20250531184832375"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="导入接口文档"><a href="#导入接口文档" class="headerlink" title="导入接口文档"></a>导入接口文档</h1><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531185821661.png" alt="image-20250531185821661"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>用yapi导入接口文档</p>
+<h1 id="Swagger"><a href="#Swagger" class="headerlink" title="Swagger"></a>Swagger</h1><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531191730650.png" alt="image-20250531191730650"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531191910971.png" alt="image-20250531191910971"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531192624546.png" alt="image-20250531192624546"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>通过这个功能可以查看接口文档和测试</p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531193152518.png" alt="image-20250531193152518"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531193303933.png" alt="image-20250531193303933"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="新增员工"><a href="#新增员工" class="headerlink" title="新增员工"></a>新增员工</h1><h3 id="需求分析和设计"><a href="#需求分析和设计" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531194342483.png" alt="image-20250531194342483"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531194747536.png" alt="image-20250531194747536"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531195525816.png" alt="image-20250531195525816"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531195711620.png" alt="image-20250531195711620"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531195757828.png" alt="image-20250531195757828"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="测试（视频多看）"><a href="#测试（视频多看）" class="headerlink" title="测试（视频多看）"></a>测试（视频多看）</h3><h3 id="完善"><a href="#完善" class="headerlink" title="完善"></a>完善</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531204336736.png" alt="image-20250531204336736"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531205546067.png" alt="image-20250531205546067"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531213239173.png" alt="image-20250531213239173"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>Threadlocal</p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531225247572.png" alt="image-20250531225247572"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="员工分页查询"><a href="#员工分页查询" class="headerlink" title="员工分页查询"></a>员工分页查询</h1><h3 id="需求分析和设计-1"><a href="#需求分析和设计-1" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531225336195.png" alt="image-20250531225336195"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531225622358.png" alt="image-20250531225622358"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531232541729.png" alt="image-20250531232541729"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="完善-1"><a href="#完善-1" class="headerlink" title="完善"></a>完善</h3><p>时间格式</p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531232649351.png" alt="image-20250531232649351"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250531232720638.png" alt="image-20250531232720638"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="启用禁用员工账号"><a href="#启用禁用员工账号" class="headerlink" title="启用禁用员工账号"></a>启用禁用员工账号</h1><h3 id="需求分析和设计-2"><a href="#需求分析和设计-2" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250603110342396.png" alt="image-20250603110342396"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250603110427821.png" alt="image-20250603110427821"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><h3 id="完善-2"><a href="#完善-2" class="headerlink" title="完善"></a>完善</h3><h1 id="编辑员工"><a href="#编辑员工" class="headerlink" title="编辑员工"></a>编辑员工</h1><h3 id="需求分析和设计-3"><a href="#需求分析和设计-3" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h3><h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250603152228697.png" alt="image-20250603152228697"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="导入分类模块功能代码"><a href="#导入分类模块功能代码" class="headerlink" title="导入分类模块功能代码"></a>导入分类模块功能代码</h1><h3 id="需求分析和设计-4"><a href="#需求分析和设计-4" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250603152200450.png" alt="image-20250603152200450"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250603152632711.png" alt="image-20250603152632711"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250603152746332.png" alt="image-20250603152746332"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="公共字段自动填充"><a href="#公共字段自动填充" class="headerlink" title="公共字段自动填充"></a>公共字段自动填充</h1><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250603155225721.png" alt="image-20250603155225721"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250603155905755.png" alt="image-20250603155905755"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="新增菜品"><a href="#新增菜品" class="headerlink" title="新增菜品"></a>新增菜品</h1><h2 id="需求分析和设计-5"><a href="#需求分析和设计-5" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250604100357875.png" alt="image-20250604100357875"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250604100459587.png" alt="image-20250604100459587"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250604101429974.png" alt="image-20250604101429974"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h2><p>有点复杂，记得多看看视频</p>
+<h1 id="菜品分页查询"><a href="#菜品分页查询" class="headerlink" title="菜品分页查询"></a>菜品分页查询</h1><h2 id="需求分析和设计-6"><a href="#需求分析和设计-6" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250604163642552.png" alt="image-20250604163642552"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250604163738728.png" alt="image-20250604163738728"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h2><p>代码与之前的分页查询一样，注意Pagehelper的用法</p>
+<h1 id="删除菜品"><a href="#删除菜品" class="headerlink" title="删除菜品"></a>删除菜品</h1><h2 id="需求分析和设计-7"><a href="#需求分析和设计-7" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250605083903860.png" alt="image-20250605083903860"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250605084032261.png" alt="image-20250605084032261"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250605084219125.png" alt="image-20250605084219125"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>只需要写一个接口，即批量删除接口。</p>
+<h2 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">     <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 批量删除菜品</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> ids</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">deleteBatch</span><span class="params">(List&lt;Long&gt; ids)</span> &#123;</span><br><span class="line">        log.info(<span class="string">&quot;批量删除菜品，ids：&#123;&#125;&quot;</span>, ids);</span><br><span class="line">        <span class="comment">//判断当前菜品是否在售，ids中是否存在在售的菜品，如果在售则不能删除</span></span><br><span class="line">        <span class="keyword">for</span> (Long id : ids) &#123;</span><br><span class="line">            <span class="type">Dish</span> <span class="variable">dish</span> <span class="operator">=</span> dishMapper.getById(id);</span><br><span class="line">            <span class="keyword">if</span>(dish.getStatus() == StatusConstant.ENABLE)&#123;</span><br><span class="line">                <span class="comment">//当前有菜品在售,不能删除</span></span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">DeletionNotAllowedException</span>(MessageConstant.DISH_ON_SALE);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//判断当前菜品是否关联套餐，ids中存在关联套餐的菜品则不能删除</span></span><br><span class="line">        List&lt;Long&gt; setmealIds = setmealDishMapper.getSetmealIdsByDishIds(ids);</span><br><span class="line">        <span class="keyword">if</span>(setmealIds !=<span class="literal">null</span> &amp;&amp; setmealIds.size() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">//当前有菜品关联套餐，不能删除</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">DeletionNotAllowedException</span>(MessageConstant.DISH_BE_RELATED_BY_SETMEAL);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//删除菜品表里的菜品数据</span></span><br><span class="line"><span class="comment">//        for (Long id : ids) &#123;</span></span><br><span class="line"><span class="comment">//            dishMapper.deleteById(id);</span></span><br><span class="line"><span class="comment">//            //删除菜品关联的口味数据</span></span><br><span class="line"><span class="comment">//            dishFlavorMapper.deleteByDishId(id);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        <span class="comment">//根据菜品id集合删除菜品表里的菜品数据</span></span><br><span class="line">        dishMapper.deleteByIds(ids);</span><br><span class="line">        <span class="comment">//删除菜品关联的口味数据</span></span><br><span class="line">        dishFlavorMapper.deleteByDishIds(ids);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改菜品"><a href="#修改菜品" class="headerlink" title="修改菜品"></a>修改菜品</h1><h3 id="需求分析和设计-8"><a href="#需求分析和设计-8" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h3><p>回写信息  </p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250629222630939.png" alt="image-20250629222630939"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250629222752609.png" alt="image-20250629222752609"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250629222832441.png" alt="image-20250629222832441"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><h1 id="套餐管理"><a href="#套餐管理" class="headerlink" title="套餐管理"></a>套餐管理</h1><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250701214931958.png" alt="image-20250701214931958"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250701214949375.png" alt="image-20250701214949375"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>注意事务和数据库关系</p>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250702113540361.png" alt="image-20250702113540361"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250702113650562.png" alt="image-20250702113650562"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250702113918422.png" alt="image-20250702113918422"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/tporadowski/redis/releases">发布 ·TPORADOWSKI&#x2F;REDIS (github.com)</a></p>
+<h2 id="启动与注册window服务"><a href="#启动与注册window服务" class="headerlink" title="启动与注册window服务"></a>启动与注册window服务</h2><p>在命令行里输入</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
+
+<p>在Redis的目录下输入：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-install redis.windows.conf --service-name RedisService --port <span class="number">6379</span></span><br></pre></td></tr></table></figure>
+
+<p>和</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-<span class="built_in">start</span> --service-name RedisService</span><br></pre></td></tr></table></figure>
+
+<p>显示：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Redis service successfully started</span><br></pre></td></tr></table></figure>
+
+<p>即为成功</p>
+<p>这样设置完后，就可以让Redis服务开机自启</p>
+<h2 id="Redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h2><h3 id="5种常用的数据类型"><a href="#5种常用的数据类型" class="headerlink" title="5种常用的数据类型"></a>5种常用的数据类型</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250702173535409.png" alt="image-20250702173535409"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250702223624244.png" alt="image-20250702223624244"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="字符串操作命令"><a href="#字符串操作命令" class="headerlink" title="字符串操作命令"></a>字符串操作命令</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250702224433952.png" alt="image-20250702224433952"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="哈希操作命令"><a href="#哈希操作命令" class="headerlink" title="哈希操作命令"></a>哈希操作命令</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250703121358573.png" alt="image-20250703121358573"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="列表操作命令"><a href="#列表操作命令" class="headerlink" title="列表操作命令"></a>列表操作命令</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250703155135144.png" alt="image-20250703155135144"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250703155706798.png" alt="image-20250703155706798"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="集合操作命令"><a href="#集合操作命令" class="headerlink" title="集合操作命令"></a>集合操作命令</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250703172054976.png" alt="image-20250703172054976"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="有序集合操作命令"><a href="#有序集合操作命令" class="headerlink" title="有序集合操作命令"></a>有序集合操作命令</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250703174122440.png" alt="image-20250703174122440"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250703175413701.png" alt="image-20250703175413701"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>分数越大排得越前</p>
+<h3 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250703175716131.png" alt="image-20250703175716131"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<ul>
+<li>pattern:正则表达式</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">keys <span class="built_in">set</span>*</span><br><span class="line">set1</span><br><span class="line">set2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>del可以批量删除</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">del</span> set1 set2 zset1</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="在Java中使用Redis"><a href="#在Java中使用Redis" class="headerlink" title="在Java中使用Redis"></a>在Java中使用Redis</h1><h2 id="Redis的Java客户端"><a href="#Redis的Java客户端" class="headerlink" title="Redis的Java客户端"></a>Redis的Java客户端</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250705123357072.png" alt="image-20250705123357072"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="Spring-Data-Redis"><a href="#Spring-Data-Redis" class="headerlink" title="Spring Data Redis"></a>Spring Data Redis</h1><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250705124658413.png" alt="image-20250705124658413"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250705155335736.png" alt="image-20250705155335736"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.sky.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.val;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.connection.DataType;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpringDataRedisTest</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testRedisTemplate</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(redisTemplate);</span><br><span class="line">        <span class="type">ValueOperations</span> <span class="variable">valueOperations</span> <span class="operator">=</span> redisTemplate.opsForValue();</span><br><span class="line">        <span class="type">HashOperations</span> <span class="variable">hashOperations</span> <span class="operator">=</span> redisTemplate.opsForHash();</span><br><span class="line">        <span class="type">ListOperations</span> <span class="variable">listOperations</span> <span class="operator">=</span> redisTemplate.opsForList();</span><br><span class="line">        <span class="type">SetOperations</span> <span class="variable">setOperations</span> <span class="operator">=</span> redisTemplate.opsForSet();</span><br><span class="line">        <span class="type">ZSetOperations</span> <span class="variable">zSetOperations</span> <span class="operator">=</span> redisTemplate.opsForZSet();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作字符串类型的数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testRedisString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//set get setex setnx</span></span><br><span class="line">        redisTemplate.opsForValue().set(<span class="string">&quot;city&quot;</span>, <span class="string">&quot;北京&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">city</span> <span class="operator">=</span> (String) redisTemplate.opsForValue().get(<span class="string">&quot;city&quot;</span>);</span><br><span class="line">        System.out.println(city);</span><br><span class="line">        redisTemplate.opsForValue().set(<span class="string">&quot;code&quot;</span>, <span class="string">&quot;1234&quot;</span>, <span class="number">3</span>, TimeUnit.MINUTES);</span><br><span class="line">        redisTemplate.opsForValue().setIfAbsent(<span class="string">&quot;lock&quot;</span>, <span class="string">&quot;1&quot;</span>);</span><br><span class="line">        redisTemplate.opsForValue().setIfAbsent(<span class="string">&quot;lock&quot;</span>, <span class="string">&quot;2&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作hash类型数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testRedisHash</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//hset hget hdel hkeys hvals</span></span><br><span class="line">        <span class="type">HashOperations</span> <span class="variable">hashOperations</span> <span class="operator">=</span> redisTemplate.opsForHash();</span><br><span class="line">        hashOperations.put(<span class="string">&quot;user1&quot;</span>, <span class="string">&quot;name&quot;</span>, <span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        hashOperations.put(<span class="string">&quot;user1&quot;</span>, <span class="string">&quot;age&quot;</span>, <span class="string">&quot;12&quot;</span>);</span><br><span class="line">        <span class="comment">//hget</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> (String) hashOperations.get(<span class="string">&quot;user1&quot;</span>, <span class="string">&quot;name&quot;</span>);</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        <span class="comment">//hkeys</span></span><br><span class="line">        <span class="type">Set</span> <span class="variable">keys</span> <span class="operator">=</span> hashOperations.keys(<span class="string">&quot;user1&quot;</span>);</span><br><span class="line">        System.out.println(keys);</span><br><span class="line">        <span class="comment">//hvals</span></span><br><span class="line">        <span class="type">List</span> <span class="variable">values</span> <span class="operator">=</span> hashOperations.values(<span class="string">&quot;user1&quot;</span>);</span><br><span class="line">        System.out.println(values);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//hdel</span></span><br><span class="line">        hashOperations.delete(<span class="string">&quot;user1&quot;</span>, <span class="string">&quot;age&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作列表类型的数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testRedislist</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//Lpush Lrange rpop Llen</span></span><br><span class="line">        <span class="type">ListOperations</span> <span class="variable">listOperations</span> <span class="operator">=</span> redisTemplate.opsForList();</span><br><span class="line">        <span class="comment">//Lpush</span></span><br><span class="line">        listOperations.leftPushAll(<span class="string">&quot;mylist&quot;</span>, <span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>);</span><br><span class="line">        <span class="comment">//Lpush,是有listOperations.rightPush()的</span></span><br><span class="line">        listOperations.leftPush(<span class="string">&quot;mylist&quot;</span>, <span class="string">&quot;d&quot;</span>);</span><br><span class="line">        <span class="comment">//Lrange</span></span><br><span class="line">        <span class="type">List</span> <span class="variable">mylist</span> <span class="operator">=</span> listOperations.range(<span class="string">&quot;mylist&quot;</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">        System.out.println(mylist);</span><br><span class="line">        <span class="comment">//rpop,是有listOperations.leftPop();的</span></span><br><span class="line">        listOperations.rightPop(<span class="string">&quot;mylist&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Llen</span></span><br><span class="line">        <span class="type">Long</span> <span class="variable">size</span> <span class="operator">=</span> listOperations.size(<span class="string">&quot;mylist&quot;</span>);</span><br><span class="line">        System.out.println(size);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作集合类型的数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testRedisSet</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">// sadd smember scard sinter sunion srem</span></span><br><span class="line">        <span class="type">SetOperations</span> <span class="variable">setOperations</span> <span class="operator">=</span> redisTemplate.opsForSet();</span><br><span class="line">        setOperations.add( <span class="string">&quot;set1&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>,<span class="string">&quot;d&quot;</span>);</span><br><span class="line">        setOperations.add( <span class="string">&quot;set2&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;x&quot;</span>,<span class="string">&quot;y&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">Set</span> <span class="variable">members</span> <span class="operator">=</span>setOperations.members(<span class="string">&quot;set1&quot;</span>);</span><br><span class="line">        System.out.println(members);</span><br><span class="line"></span><br><span class="line">        Long size=setOperations.size(  <span class="string">&quot;set1&quot;</span>);</span><br><span class="line">        System.out.println(size);</span><br><span class="line"></span><br><span class="line">        <span class="type">Set</span> <span class="variable">intersect</span> <span class="operator">=</span> setOperations.intersect(<span class="string">&quot;set1&quot;</span>, <span class="string">&quot;set2&quot;</span>);</span><br><span class="line">        System.out.println(intersect);</span><br><span class="line"></span><br><span class="line">        <span class="type">Set</span> <span class="variable">union</span> <span class="operator">=</span> setOperations.union(<span class="string">&quot;set1&quot;</span>, <span class="string">&quot;set2&quot;</span>);</span><br><span class="line">        System.out.println(union);</span><br><span class="line">        setOperations.remove(<span class="string">&quot;set1&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作有序集合类型的数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testRedisZSet</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">////zadd zrange zincrby zrem</span></span><br><span class="line">        <span class="type">ZSetOperations</span> <span class="variable">zSetOperations</span> <span class="operator">=</span> redisTemplate.opsForZSet();</span><br><span class="line"></span><br><span class="line">        zSetOperations.add(<span class="string">&quot;zset1&quot;</span>, <span class="string">&quot;a&quot;</span>, <span class="number">10</span>);</span><br><span class="line">        zSetOperations.add(<span class="string">&quot;zset1&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="number">20</span>);</span><br><span class="line">        zSetOperations.add(<span class="string">&quot;zset1&quot;</span>, <span class="string">&quot;c&quot;</span>, <span class="number">30</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">Set</span> <span class="variable">zset1</span> <span class="operator">=</span> zSetOperations.range(<span class="string">&quot;zset1&quot;</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">        System.out.println(zset1);</span><br><span class="line"></span><br><span class="line">        zSetOperations.incrementScore(<span class="string">&quot;zset1&quot;</span>, <span class="string">&quot;a&quot;</span>, <span class="number">10</span>);</span><br><span class="line">        System.out.println(zset1);</span><br><span class="line"></span><br><span class="line">        zSetOperations.remove(<span class="string">&quot;zset1&quot;</span>, <span class="string">&quot;a&quot;</span>);</span><br><span class="line">        System.out.println(zset1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通用命令操作</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testRedisCommon</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//keys exists type del</span></span><br><span class="line">        <span class="type">Set</span> <span class="variable">keys</span> <span class="operator">=</span>redisTemplate.keys( <span class="string">&quot;*&quot;</span>);</span><br><span class="line">        System.out.println(keys);</span><br><span class="line">        Boolean name=redisTemplate.hasKey(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        Boolean set1=redisTemplate.hasKey(<span class="string">&quot;set1&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (Object key : keys) &#123;</span><br><span class="line">            <span class="type">DataType</span> <span class="variable">type</span> <span class="operator">=</span> redisTemplate.type(key);</span><br><span class="line">            System.out.println(type.name());</span><br><span class="line">            &#125;</span><br><span class="line">        redisTemplate.delete(<span class="string">&quot;mylist&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="店铺营业状态设置"><a href="#店铺营业状态设置" class="headerlink" title="店铺营业状态设置"></a>店铺营业状态设置</h1><h3 id="需求分析和设计-9"><a href="#需求分析和设计-9" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250706124643946.png" alt="image-20250706124643946"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250706125039384.png" alt="image-20250706125039384"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250706125129850.png" alt="image-20250706125129850"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="代码-8"><a href="#代码-8" class="headerlink" title="代码"></a>代码</h3><h3 id="完善-3"><a href="#完善-3" class="headerlink" title="完善"></a>完善</h3><h1 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h1><h2 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h2><p>就是可以再Java里面写http协议并发送</p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250707224139472.png" alt="image-20250707224139472"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="入门案例"><a href="#入门案例" class="headerlink" title="入门案例"></a>入门案例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.sky.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONObject;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.HttpEntity;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.client.methods.CloseableHttpResponse;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.client.methods.HttpGet;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.client.methods.HttpPost;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.entity.StringEntity;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.impl.client.CloseableHttpClient;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.impl.client.HttpClients;</span><br><span class="line"><span class="keyword">import</span> org.apache.http.util.EntityUtils;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.UnsupportedEncodingException;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HttpClientTest</span> &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 试通过httpcLient发送GET方式的请求</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testGet</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//创建HttpClient对象</span></span><br><span class="line">        <span class="type">CloseableHttpClient</span> <span class="variable">httpClient</span> <span class="operator">=</span> HttpClients.createDefault();</span><br><span class="line">        <span class="comment">//创建请求对象，HttpGet对象，设置url访问地址</span></span><br><span class="line">        <span class="type">HttpGet</span> <span class="variable">httpGet</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HttpGet</span>(<span class="string">&quot;http://localhost:8080/user/shop/status&quot;</span>);</span><br><span class="line">        <span class="comment">//发送请求，接受响应结果</span></span><br><span class="line">        <span class="type">CloseableHttpResponse</span> <span class="variable">response</span> <span class="operator">=</span> httpClient.execute(httpGet);</span><br><span class="line">        <span class="comment">//获取服务端返回的状态码</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">statusCode</span> <span class="operator">=</span> response.getStatusLine().getStatusCode();</span><br><span class="line">        System.out.println(<span class="string">&quot;服务端返回的状态码为：&quot;</span>+statusCode);</span><br><span class="line">                <span class="type">HttpEntity</span> <span class="variable">entity</span> <span class="operator">=</span> response.getEntity();</span><br><span class="line">        <span class="type">String</span> <span class="variable">body</span> <span class="operator">=</span> EntityUtils.toString(entity);</span><br><span class="line">        System.out.println(<span class="string">&quot;服务端返回的数据为：&quot;</span>+body);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭流和客户端</span></span><br><span class="line">        response.close();</span><br><span class="line">        httpClient.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 试通过httpcLient发送POST方式的请求</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testPost</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//创建HttpClient对象</span></span><br><span class="line">        <span class="type">CloseableHttpClient</span> <span class="variable">httpClient</span> <span class="operator">=</span> HttpClients.createDefault();</span><br><span class="line">        <span class="comment">//创建请求对象，HttpPOST对象，设置url访问地址</span></span><br><span class="line">        <span class="type">HttpPost</span> <span class="variable">httpPost</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">HttpPost</span>(<span class="string">&quot;http://localhost:8080/admin/employee/login&quot;</span>);</span><br><span class="line"></span><br><span class="line">        JSONObject jsonObject=<span class="keyword">new</span> <span class="title class_">JSONObject</span>();</span><br><span class="line">        jsonObject.put(<span class="string">&quot;username&quot;</span>,<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">        jsonObject.put(<span class="string">&quot;password&quot;</span>,<span class="string">&quot;123456&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">StringEntity</span> <span class="variable">entity</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringEntity</span>(jsonObject.toString());</span><br><span class="line">        <span class="comment">//指定编码方式</span></span><br><span class="line">        entity.setContentEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        <span class="comment">//指定数据类型</span></span><br><span class="line">        entity.setContentType(<span class="string">&quot;application/json&quot;</span>);</span><br><span class="line"></span><br><span class="line">        httpPost.setEntity(entity);</span><br><span class="line">        <span class="comment">//发送请求，接受响应结果</span></span><br><span class="line">        <span class="type">CloseableHttpResponse</span> <span class="variable">response</span> <span class="operator">=</span> httpClient.execute(httpPost);</span><br><span class="line">        <span class="comment">//获取服务端返回的状态码</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">statusCode</span> <span class="operator">=</span> response.getStatusLine().getStatusCode();</span><br><span class="line">        System.out.println(<span class="string">&quot;服务端返回的状态码为：&quot;</span>+statusCode);</span><br><span class="line">        <span class="type">HttpEntity</span> <span class="variable">entity1</span> <span class="operator">=</span> response.getEntity();</span><br><span class="line">        <span class="type">String</span> <span class="variable">body</span> <span class="operator">=</span> EntityUtils.toString(entity1);</span><br><span class="line">        System.out.println(<span class="string">&quot;服务端返回的数据为：&quot;</span>+body);</span><br><span class="line">        <span class="comment">//关闭流和客户端</span></span><br><span class="line">        response.close();</span><br><span class="line">        httpClient.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="微信小程序"><a href="#微信小程序" class="headerlink" title="微信小程序"></a>微信小程序</h1><h2 id="介绍-2"><a href="#介绍-2" class="headerlink" title="介绍"></a>介绍</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250709223059553.png" alt="image-20250709223059553"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250709223119899.png" alt="image-20250709223119899"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250709223136833.png" alt="image-20250709223136833"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250709223232193.png" alt="image-20250709223232193"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250709223349295.png" alt="image-20250709223349295"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="入门案例-1"><a href="#入门案例-1" class="headerlink" title="入门案例"></a>入门案例</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250710155805465.png" alt="image-20250710155805465"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250710160055539.png" alt="image-20250710160055539"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="微信登陆"><a href="#微信登陆" class="headerlink" title="微信登陆"></a>微信登陆</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250711152047951.png" alt="image-20250711152047951"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250711161135010.png" alt="image-20250711161135010"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250711161507491.png" alt="image-20250711161507491"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="商品浏览"><a href="#商品浏览" class="headerlink" title="商品浏览"></a>商品浏览</h2><h3 id="需求分析-1"><a href="#需求分析-1" class="headerlink" title="需求分析"></a>需求分析</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250711230906249.png" alt="image-20250711230906249"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250711231011833.png" alt="image-20250711231011833"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250711231201440.png" alt="image-20250711231201440"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250711232233590.png" alt="image-20250711232233590"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250711232336715.png" alt="image-20250711232336715"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250711232754655.png" alt="image-20250711232754655"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="菜品缓存"><a href="#菜品缓存" class="headerlink" title="菜品缓存"></a>菜品缓存</h2><h3 id="问题说明"><a href="#问题说明" class="headerlink" title="问题说明"></a>问题说明</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712112556891.png" alt="image-20250712112556891"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712113506823.png" alt="image-20250712113506823"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="实现思路-1"><a href="#实现思路-1" class="headerlink" title="实现思路"></a>实现思路</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712161010063.png" alt="image-20250712161010063"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><strong>在管理端增删改的时候要进行清理缓存，以防数据不一致</strong></p>
+<h2 id="缓存套餐"><a href="#缓存套餐" class="headerlink" title="缓存套餐"></a>缓存套餐</h2><h1 id="Spring-Cache"><a href="#Spring-Cache" class="headerlink" title="Spring Cache"></a>Spring Cache</h1><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712173332971.png" alt="image-20250712173332971"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712173419346.png" alt="image-20250712173419346"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712195011823.png" alt="image-20250712195011823"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712195426585.png" alt="image-20250712195426585"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712202719184.png" alt="image-20250712202719184"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712203720164.png" alt="image-20250712203720164"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="实现思路-2"><a href="#实现思路-2" class="headerlink" title="实现思路"></a>实现思路</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712203805417.png" alt="image-20250712203805417"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="添加购物车"><a href="#添加购物车" class="headerlink" title="添加购物车"></a>添加购物车</h2><h3 id="需求分析-2"><a href="#需求分析-2" class="headerlink" title="需求分析"></a>需求分析</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712212117620.png" alt="image-20250712212117620"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712212630069.png" alt="image-20250712212630069"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712212816703.png" alt="image-20250712212816703"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712212852647.png" alt="image-20250712212852647"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="查看购物车"><a href="#查看购物车" class="headerlink" title="查看购物车"></a>查看购物车</h2><h3 id="需求分析-3"><a href="#需求分析-3" class="headerlink" title="需求分析"></a>需求分析</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712223757849.png" alt="image-20250712223757849"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="清空购物车"><a href="#清空购物车" class="headerlink" title="清空购物车"></a>清空购物车</h2><h3 id="需求分析-4"><a href="#需求分析-4" class="headerlink" title="需求分析"></a>需求分析</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250712224659704.png" alt="image-20250712224659704"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="地址簿"><a href="#地址簿" class="headerlink" title="地址簿"></a>地址簿</h2><h3 id="需求分析-5"><a href="#需求分析-5" class="headerlink" title="需求分析"></a>需求分析</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713145514924.png" alt="image-20250713145514924"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713145757941.png" alt="image-20250713145757941"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="用户下单"><a href="#用户下单" class="headerlink" title="用户下单"></a>用户下单</h2><h3 id="需求分析-6"><a href="#需求分析-6" class="headerlink" title="需求分析"></a>需求分析</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713144706831.png" alt="image-20250713144706831"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713154150730.png" alt="image-20250713154150730"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713160925447.png" alt="image-20250713160925447"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713161124085.png" alt="image-20250713161124085"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713161218601.png" alt="image-20250713161218601"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713162117293.png" alt="image-20250713162117293"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713162329811.png" alt="image-20250713162329811"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713162430533.png" alt="image-20250713162430533"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713162442209.png" alt="image-20250713162442209"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="订单支付"><a href="#订单支付" class="headerlink" title="订单支付"></a>订单支付</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713201603628.png" alt="image-20250713201603628"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713201756989.png" alt="image-20250713201756989"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713204911005.png" alt="image-20250713204911005"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713205043917.png" alt="image-20250713205043917"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713205314341.png" alt="image-20250713205314341"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h3 id="微信支付准备工作"><a href="#微信支付准备工作" class="headerlink" title="微信支付准备工作"></a>微信支付准备工作</h3><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713205630800.png" alt="image-20250713205630800"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>调用微信支付的API需要有公网ip</p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250713215447131.png" alt="image-20250713215447131"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="Spring-Task"><a href="#Spring-Task" class="headerlink" title="Spring Task"></a>Spring Task</h1><h2 id="介绍-3"><a href="#介绍-3" class="headerlink" title="介绍"></a>介绍</h2><p>定时任务</p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250717165706000.png" alt="image-20250717165706000"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250717165732587.png" alt="image-20250717165732587"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="cron表达式"><a href="#cron表达式" class="headerlink" title="cron表达式"></a>cron表达式</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250717171309836.png" alt="image-20250717171309836"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250717171429370.png" alt="image-20250717171429370"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>用ai和网站就行</p>
+<h2 id="入门案例-2"><a href="#入门案例-2" class="headerlink" title="入门案例"></a>入门案例</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250717200110733.png" alt="image-20250717200110733"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="订单状态定时处理"><a href="#订单状态定时处理" class="headerlink" title="订单状态定时处理"></a>订单状态定时处理</h1><h2 id="需求分析-7"><a href="#需求分析-7" class="headerlink" title="需求分析"></a>需求分析</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250717202213156.png" alt="image-20250717202213156"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="代码-9"><a href="#代码-9" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.sky.task;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.sky.entity.Orders;</span><br><span class="line"><span class="keyword">import</span> com.sky.mapper.OrderMapper;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.Scheduled;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 订单定时任务</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OrderTask</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> OrderMapper orderMapper;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 处理支付超时订单</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Scheduled(cron = &quot;0 * * * * ? &quot;)</span> <span class="comment">//每分钟触发一次</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">processTimeoutOrder</span><span class="params">()</span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;处理订单超时,&#123;&#125;&quot;</span>, LocalDateTime.now());</span><br><span class="line">        <span class="type">LocalDateTime</span> <span class="variable">time</span> <span class="operator">=</span> LocalDateTime.now().plusMinutes(-<span class="number">15</span>);</span><br><span class="line">        List&lt;Orders&gt; byStatusAndOrderTime = orderMapper.getByStatusAndOrderTime(Orders.PENDING_PAYMENT, time);</span><br><span class="line">        <span class="keyword">if</span> (byStatusAndOrderTime != <span class="literal">null</span> &amp;&amp; byStatusAndOrderTime.size() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span> (Orders order : byStatusAndOrderTime) &#123;</span><br><span class="line">                order.setStatus(Orders.CANCELLED);</span><br><span class="line">                order.setCancelReason(<span class="string">&quot;订单超时取消&quot;</span>);</span><br><span class="line">                order.setCancelTime(LocalDateTime.now());</span><br><span class="line">                orderMapper.update(order);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 处理派送中的订单</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Scheduled(cron = &quot;0 0 1 * * ? &quot;)</span> <span class="comment">//每天凌晨1点触发一次</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">processDeliveryOrder</span><span class="params">()</span>&#123;</span><br><span class="line">        log.info(<span class="string">&quot;处理派送中的订单,&#123;&#125;&quot;</span>, LocalDateTime.now());</span><br><span class="line">        <span class="type">LocalDateTime</span> <span class="variable">time</span> <span class="operator">=</span> LocalDateTime.now().plusMinutes(-<span class="number">60</span>);</span><br><span class="line">        List&lt;Orders&gt; statusAndOrderTime = orderMapper.getByStatusAndOrderTime(Orders.DELIVERY_IN_PROGRESS, time);</span><br><span class="line">        <span class="keyword">if</span> (statusAndOrderTime != <span class="literal">null</span> &amp;&amp; statusAndOrderTime.size() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span> (Orders order : statusAndOrderTime) &#123;</span><br><span class="line">                order.setStatus(Orders.CANCELLED);</span><br><span class="line">                orderMapper.update(order);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="WebSocket（网络协议）"><a href="#WebSocket（网络协议）" class="headerlink" title="WebSocket（网络协议）"></a>WebSocket（网络协议）</h1><h2 id="介绍-4"><a href="#介绍-4" class="headerlink" title="介绍"></a>介绍</h2><p>不需要刷新</p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250717220553089.png" alt="image-20250717220553089"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250717220751886.png" alt="image-20250717220751886"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="来单提醒"><a href="#来单提醒" class="headerlink" title="来单提醒"></a>来单提醒</h1><h2 id="需求分析-8"><a href="#需求分析-8" class="headerlink" title="需求分析"></a>需求分析</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718114921207.png" alt="image-20250718114921207"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="客户催单"><a href="#客户催单" class="headerlink" title="客户催单"></a>客户催单</h1><h2 id="需求分析-9"><a href="#需求分析-9" class="headerlink" title="需求分析"></a>需求分析</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718153758878.png" alt="image-20250718153758878"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718155236429.png" alt="image-20250718155236429"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="Apache-ECharts（前端的技术）"><a href="#Apache-ECharts（前端的技术）" class="headerlink" title="Apache ECharts（前端的技术）"></a>Apache ECharts（前端的技术）</h1><h2 id="介绍-5"><a href="#介绍-5" class="headerlink" title="介绍"></a>介绍</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718161640965.png" alt="image-20250718161640965"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718161656373.png" alt="image-20250718161656373"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718161708948.png" alt="image-20250718161708948"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718161720221.png" alt="image-20250718161720221"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718165310087.png" alt="image-20250718165310087"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718165342504.png" alt="image-20250718165342504"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="营业额统计"><a href="#营业额统计" class="headerlink" title="营业额统计"></a>营业额统计</h1><h2 id="需求分析-10"><a href="#需求分析-10" class="headerlink" title="需求分析"></a>需求分析</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718165715085.png" alt="image-20250718165715085"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718170859329.png" alt="image-20250718170859329"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="用户统计"><a href="#用户统计" class="headerlink" title="用户统计"></a>用户统计</h1><h2 id="需求分析-11"><a href="#需求分析-11" class="headerlink" title="需求分析"></a>需求分析</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718214735655.png" alt="image-20250718214735655"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718215022865.png" alt="image-20250718215022865"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="订单统计"><a href="#订单统计" class="headerlink" title="订单统计"></a>订单统计</h1><h2 id="需求分析-12"><a href="#需求分析-12" class="headerlink" title="需求分析"></a>需求分析</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718223557825.png" alt="image-20250718223557825"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718223700712.png" alt="image-20250718223700712"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="销量排名统计"><a href="#销量排名统计" class="headerlink" title="销量排名统计"></a>销量排名统计</h1><h2 id="需求分析-13"><a href="#需求分析-13" class="headerlink" title="需求分析"></a>需求分析</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718232236512.png" alt="image-20250718232236512"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250718232608021.png" alt="image-20250718232608021"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="工作台"><a href="#工作台" class="headerlink" title="工作台"></a>工作台</h1><h2 id="需求分析-14"><a href="#需求分析-14" class="headerlink" title="需求分析"></a>需求分析</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719103659093.png" alt="image-20250719103659093"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719103939559.png" alt="image-20250719103939559"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719104126947.png" alt="image-20250719104126947"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719104309427.png" alt="image-20250719104309427"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719104408982.png" alt="image-20250719104408982"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719104423227.png" alt="image-20250719104423227"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719104452228.png" alt="image-20250719104452228"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h1 id="ApachePOI"><a href="#ApachePOI" class="headerlink" title="ApachePOI"></a>ApachePOI</h1><p>## 介绍 </p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719110545423.png" alt="image-20250719110545423"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719110609556.png" alt="image-20250719110609556"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="ApachePOl-入门案例"><a href="#ApachePOl-入门案例" class="headerlink" title="ApachePOl_入门案例_"></a>ApachePOl_入门案例_</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.sky.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.poi.xssf.usermodel.XSSFCell;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.xssf.usermodel.XSSFRow;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.xssf.usermodel.XSSFSheet;</span><br><span class="line"><span class="keyword">import</span> org.apache.poi.xssf.usermodel.XSSFWorkbook;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用POI操作Excel文件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">POITest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过POI创建Excel文件并且写入文件内容</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">write</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">        <span class="comment">//在内存中创建一个Excel文件</span></span><br><span class="line">        <span class="type">XSSFWorkbook</span> <span class="variable">excel</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">XSSFWorkbook</span>();</span><br><span class="line">        <span class="comment">//在Excel文件中创建一个Sheet页</span></span><br><span class="line">        <span class="type">XSSFSheet</span> <span class="variable">sheet</span> <span class="operator">=</span> excel.createSheet(<span class="string">&quot;info&quot;</span>);</span><br><span class="line">        <span class="comment">//在Sheet中创建行对象,rownum编号从0开始</span></span><br><span class="line">        <span class="type">XSSFRow</span> <span class="variable">row</span> <span class="operator">=</span> sheet.createRow(<span class="number">1</span>);</span><br><span class="line">        <span class="comment">//创建单元格并且写入文件内容</span></span><br><span class="line">        row.createCell(<span class="number">1</span>).setCellValue(<span class="string">&quot;姓名&quot;</span>);</span><br><span class="line">        row.createCell(<span class="number">2</span>).setCellValue(<span class="string">&quot;城市&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建一个新行</span></span><br><span class="line">        row = sheet.createRow(<span class="number">2</span>);</span><br><span class="line">        row.createCell(<span class="number">1</span>).setCellValue(<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">        row.createCell(<span class="number">2</span>).setCellValue(<span class="string">&quot;北京&quot;</span>);</span><br><span class="line"></span><br><span class="line">        row = sheet.createRow(<span class="number">3</span>);</span><br><span class="line">        row.createCell(<span class="number">1</span>).setCellValue(<span class="string">&quot;李四&quot;</span>);</span><br><span class="line">        row.createCell(<span class="number">2</span>).setCellValue(<span class="string">&quot;南京&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//通过输出流将内存中的Excel文件写入到磁盘</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;D:\\info.xlsx&quot;</span>));</span><br><span class="line">        excel.write(out);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭资源</span></span><br><span class="line">        out.close();</span><br><span class="line">        excel.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过POI读取Excel文件中的内容</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">read</span><span class="params">()</span> <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;D:\\info.xlsx&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//读取磁盘上已经存在的Excel文件</span></span><br><span class="line">        <span class="type">XSSFWorkbook</span> <span class="variable">excel</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">XSSFWorkbook</span>(in);</span><br><span class="line">        <span class="comment">//读取Excel文件中的第一个Sheet页</span></span><br><span class="line">        <span class="type">XSSFSheet</span> <span class="variable">sheet</span> <span class="operator">=</span> excel.getSheetAt(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取Sheet中最后一行的行号</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">lastRowNum</span> <span class="operator">=</span> sheet.getLastRowNum();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= lastRowNum ; i++) &#123;</span><br><span class="line">            <span class="comment">//获得某一行</span></span><br><span class="line">            <span class="type">XSSFRow</span> <span class="variable">row</span> <span class="operator">=</span> sheet.getRow(i);</span><br><span class="line">            <span class="comment">//获得单元格对象</span></span><br><span class="line">            <span class="type">String</span> <span class="variable">cellValue1</span> <span class="operator">=</span> row.getCell(<span class="number">1</span>).getStringCellValue();</span><br><span class="line">            <span class="type">String</span> <span class="variable">cellValue2</span> <span class="operator">=</span> row.getCell(<span class="number">2</span>).getStringCellValue();</span><br><span class="line">            System.out.println(cellValue1 + <span class="string">&quot; &quot;</span> + cellValue2);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭资源</span></span><br><span class="line">        in.close();</span><br><span class="line">        excel.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//write();</span></span><br><span class="line">        read();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="导出运营数据Excel报表"><a href="#导出运营数据Excel报表" class="headerlink" title="导出运营数据Excel报表"></a>导出运营数据Excel报表</h1><h2 id="需求分析和设计-10"><a href="#需求分析和设计-10" class="headerlink" title="需求分析和设计"></a>需求分析和设计</h2><p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719151151877.png" alt="image-20250719151151877"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719151302564.png" alt="image-20250719151302564"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p><strong>先设计好一个模板文件</strong></p>
+<p><img src="/2025/05/29/%E8%8B%8D%E7%A9%B9%E5%A4%96%E5%8D%96/image-20250719151553252.png" alt="image-20250719151553252"  data-tag='post-image' onload='this.onload=null;this.style.opacity=1;' loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<h2 id="代码开发"><a href="#代码开发" class="headerlink" title="代码开发"></a>代码开发</h2>
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2025/03/29/Web%E7%AC%94%E8%AE%B0/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E5%AE%8C%E7%BB%93/">
+                    完结
+                </a>
+            </div>
+            <h5>
+                <a href="/2025/03/29/Web%E7%AC%94%E8%AE%B0/" class="trm-anima-link">
+                    Web笔记
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>25/03/29</li>
+                <li>17:48</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-footer-card trm-scroll-animation">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.2.6
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="软件开发整体介绍"><a rel="nofollow" class="trm-toc-link" href="#软件开发整体介绍"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">软件开发整体介绍</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="软件开发流程"><a rel="nofollow" class="trm-toc-link" href="#软件开发流程"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">软件开发流程</span></a></li><li class="trm-toc-item trm-toc-level-2" title="角色分工"><a rel="nofollow" class="trm-toc-link" href="#角色分工"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">角色分工</span></a></li><li class="trm-toc-item trm-toc-level-2" title="软件环境"><a rel="nofollow" class="trm-toc-link" href="#软件环境"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">软件环境</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="项目"><a rel="nofollow" class="trm-toc-link" href="#项目"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">项目</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="项目介绍"><a rel="nofollow" class="trm-toc-link" href="#项目介绍"><span class="trm-toc-number">2.1.</span> <span class="trm-toc-text">项目介绍</span></a></li><li class="trm-toc-item trm-toc-level-2" title="产品原型"><a rel="nofollow" class="trm-toc-link" href="#产品原型"><span class="trm-toc-number">2.2.</span> <span class="trm-toc-text">产品原型</span></a></li><li class="trm-toc-item trm-toc-level-2" title="技术选型"><a rel="nofollow" class="trm-toc-link" href="#技术选型"><span class="trm-toc-number">2.3.</span> <span class="trm-toc-text">技术选型</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="开发环境搭建"><a rel="nofollow" class="trm-toc-link" href="#开发环境搭建"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">开发环境搭建</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="前端环境"><a rel="nofollow" class="trm-toc-link" href="#前端环境"><span class="trm-toc-number">3.1.</span> <span class="trm-toc-text">前端环境</span></a></li><li class="trm-toc-item trm-toc-level-2" title="后端环境"><a rel="nofollow" class="trm-toc-link" href="#后端环境"><span class="trm-toc-number">3.2.</span> <span class="trm-toc-text">后端环境</span></a></li><li class="trm-toc-item trm-toc-level-2" title="Git"><a rel="nofollow" class="trm-toc-link" href="#Git"><span class="trm-toc-number">3.3.</span> <span class="trm-toc-text">Git</span></a></li><li class="trm-toc-item trm-toc-level-2" title="数据库环境"><a rel="nofollow" class="trm-toc-link" href="#数据库环境"><span class="trm-toc-number">3.4.</span> <span class="trm-toc-text">数据库环境</span></a></li><li class="trm-toc-item trm-toc-level-2" title="前后端联调"><a rel="nofollow" class="trm-toc-link" href="#前后端联调"><span class="trm-toc-number">3.5.</span> <span class="trm-toc-text">前后端联调</span></a></li><li class="trm-toc-item trm-toc-level-2" title="完善登录功能（加密密码）"><a rel="nofollow" class="trm-toc-link" href="#完善登录功能（加密密码）"><span class="trm-toc-number">3.6.</span> <span class="trm-toc-text">完善登录功能（加密密码）</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="导入接口文档"><a rel="nofollow" class="trm-toc-link" href="#导入接口文档"><span class="trm-toc-number">4.</span> <span class="trm-toc-text">导入接口文档</span></a></li><li class="trm-toc-item trm-toc-level-1" title="Swagger"><a rel="nofollow" class="trm-toc-link" href="#Swagger"><span class="trm-toc-number">5.</span> <span class="trm-toc-text">Swagger</span></a></li><li class="trm-toc-item trm-toc-level-1" title="新增员工"><a rel="nofollow" class="trm-toc-link" href="#新增员工"><span class="trm-toc-number">6.</span> <span class="trm-toc-text">新增员工</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计"><span class="trm-toc-number">6.0.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-3" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码"><span class="trm-toc-number">6.0.2.</span> <span class="trm-toc-text">代码</span></a></li><li class="trm-toc-item trm-toc-level-3" title="测试（视频多看）"><a rel="nofollow" class="trm-toc-link" href="#测试（视频多看）"><span class="trm-toc-number">6.0.3.</span> <span class="trm-toc-text">测试（视频多看）</span></a></li><li class="trm-toc-item trm-toc-level-3" title="完善"><a rel="nofollow" class="trm-toc-link" href="#完善"><span class="trm-toc-number">6.0.4.</span> <span class="trm-toc-text">完善</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="员工分页查询"><a rel="nofollow" class="trm-toc-link" href="#员工分页查询"><span class="trm-toc-number">7.</span> <span class="trm-toc-text">员工分页查询</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-1"><span class="trm-toc-number">7.0.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-3" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码-1"><span class="trm-toc-number">7.0.2.</span> <span class="trm-toc-text">代码</span></a></li><li class="trm-toc-item trm-toc-level-3" title="完善"><a rel="nofollow" class="trm-toc-link" href="#完善-1"><span class="trm-toc-number">7.0.3.</span> <span class="trm-toc-text">完善</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="启用禁用员工账号"><a rel="nofollow" class="trm-toc-link" href="#启用禁用员工账号"><span class="trm-toc-number">8.</span> <span class="trm-toc-text">启用禁用员工账号</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-2"><span class="trm-toc-number">8.0.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-3" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码-2"><span class="trm-toc-number">8.0.2.</span> <span class="trm-toc-text">代码</span></a></li><li class="trm-toc-item trm-toc-level-3" title="完善"><a rel="nofollow" class="trm-toc-link" href="#完善-2"><span class="trm-toc-number">8.0.3.</span> <span class="trm-toc-text">完善</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="编辑员工"><a rel="nofollow" class="trm-toc-link" href="#编辑员工"><span class="trm-toc-number">9.</span> <span class="trm-toc-text">编辑员工</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-3"><span class="trm-toc-number">9.0.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-3" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码-3"><span class="trm-toc-number">9.0.2.</span> <span class="trm-toc-text">代码</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="导入分类模块功能代码"><a rel="nofollow" class="trm-toc-link" href="#导入分类模块功能代码"><span class="trm-toc-number">10.</span> <span class="trm-toc-text">导入分类模块功能代码</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-4"><span class="trm-toc-number">10.0.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="公共字段自动填充"><a rel="nofollow" class="trm-toc-link" href="#公共字段自动填充"><span class="trm-toc-number">11.</span> <span class="trm-toc-text">公共字段自动填充</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="问题分析"><a rel="nofollow" class="trm-toc-link" href="#问题分析"><span class="trm-toc-number">11.1.</span> <span class="trm-toc-text">问题分析</span></a></li><li class="trm-toc-item trm-toc-level-2" title="实现思路"><a rel="nofollow" class="trm-toc-link" href="#实现思路"><span class="trm-toc-number">11.2.</span> <span class="trm-toc-text">实现思路</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="新增菜品"><a rel="nofollow" class="trm-toc-link" href="#新增菜品"><span class="trm-toc-number">12.</span> <span class="trm-toc-text">新增菜品</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-5"><span class="trm-toc-number">12.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-2" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码-4"><span class="trm-toc-number">12.2.</span> <span class="trm-toc-text">代码</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="菜品分页查询"><a rel="nofollow" class="trm-toc-link" href="#菜品分页查询"><span class="trm-toc-number">13.</span> <span class="trm-toc-text">菜品分页查询</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-6"><span class="trm-toc-number">13.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-2" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码-5"><span class="trm-toc-number">13.2.</span> <span class="trm-toc-text">代码</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="删除菜品"><a rel="nofollow" class="trm-toc-link" href="#删除菜品"><span class="trm-toc-number">14.</span> <span class="trm-toc-text">删除菜品</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-7"><span class="trm-toc-number">14.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-2" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码-6"><span class="trm-toc-number">14.2.</span> <span class="trm-toc-text">代码</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="修改菜品"><a rel="nofollow" class="trm-toc-link" href="#修改菜品"><span class="trm-toc-number">15.</span> <span class="trm-toc-text">修改菜品</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-8"><span class="trm-toc-number">15.0.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-3" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码-7"><span class="trm-toc-number">15.0.2.</span> <span class="trm-toc-text">代码</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="套餐管理"><a rel="nofollow" class="trm-toc-link" href="#套餐管理"><span class="trm-toc-number">16.</span> <span class="trm-toc-text">套餐管理</span></a></li><li class="trm-toc-item trm-toc-level-1" title="Redis"><a rel="nofollow" class="trm-toc-link" href="#Redis"><span class="trm-toc-number">17.</span> <span class="trm-toc-text">Redis</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="介绍"><a rel="nofollow" class="trm-toc-link" href="#介绍"><span class="trm-toc-number">17.1.</span> <span class="trm-toc-text">介绍</span></a></li><li class="trm-toc-item trm-toc-level-2" title="下载"><a rel="nofollow" class="trm-toc-link" href="#下载"><span class="trm-toc-number">17.2.</span> <span class="trm-toc-text">下载</span></a></li><li class="trm-toc-item trm-toc-level-2" title="启动与注册window服务"><a rel="nofollow" class="trm-toc-link" href="#启动与注册window服务"><span class="trm-toc-number">17.3.</span> <span class="trm-toc-text">启动与注册window服务</span></a></li><li class="trm-toc-item trm-toc-level-2" title="Redis数据类型"><a rel="nofollow" class="trm-toc-link" href="#Redis数据类型"><span class="trm-toc-number">17.4.</span> <span class="trm-toc-text">Redis数据类型</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="5种常用的数据类型"><a rel="nofollow" class="trm-toc-link" href="#5种常用的数据类型"><span class="trm-toc-number">17.4.1.</span> <span class="trm-toc-text">5种常用的数据类型</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="常用命令"><a rel="nofollow" class="trm-toc-link" href="#常用命令"><span class="trm-toc-number">17.5.</span> <span class="trm-toc-text">常用命令</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="字符串操作命令"><a rel="nofollow" class="trm-toc-link" href="#字符串操作命令"><span class="trm-toc-number">17.5.1.</span> <span class="trm-toc-text">字符串操作命令</span></a></li><li class="trm-toc-item trm-toc-level-3" title="哈希操作命令"><a rel="nofollow" class="trm-toc-link" href="#哈希操作命令"><span class="trm-toc-number">17.5.2.</span> <span class="trm-toc-text">哈希操作命令</span></a></li><li class="trm-toc-item trm-toc-level-3" title="列表操作命令"><a rel="nofollow" class="trm-toc-link" href="#列表操作命令"><span class="trm-toc-number">17.5.3.</span> <span class="trm-toc-text">列表操作命令</span></a></li><li class="trm-toc-item trm-toc-level-3" title="集合操作命令"><a rel="nofollow" class="trm-toc-link" href="#集合操作命令"><span class="trm-toc-number">17.5.4.</span> <span class="trm-toc-text">集合操作命令</span></a></li><li class="trm-toc-item trm-toc-level-3" title="有序集合操作命令"><a rel="nofollow" class="trm-toc-link" href="#有序集合操作命令"><span class="trm-toc-number">17.5.5.</span> <span class="trm-toc-text">有序集合操作命令</span></a></li><li class="trm-toc-item trm-toc-level-3" title="通用命令"><a rel="nofollow" class="trm-toc-link" href="#通用命令"><span class="trm-toc-number">17.5.6.</span> <span class="trm-toc-text">通用命令</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="在Java中使用Redis"><a rel="nofollow" class="trm-toc-link" href="#在Java中使用Redis"><span class="trm-toc-number">18.</span> <span class="trm-toc-text">在Java中使用Redis</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="Redis的Java客户端"><a rel="nofollow" class="trm-toc-link" href="#Redis的Java客户端"><span class="trm-toc-number">18.1.</span> <span class="trm-toc-text">Redis的Java客户端</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="Spring Data Redis"><a rel="nofollow" class="trm-toc-link" href="#Spring-Data-Redis"><span class="trm-toc-number">19.</span> <span class="trm-toc-text">Spring Data Redis</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="操作"><a rel="nofollow" class="trm-toc-link" href="#操作"><span class="trm-toc-number">19.1.</span> <span class="trm-toc-text">操作</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="店铺营业状态设置"><a rel="nofollow" class="trm-toc-link" href="#店铺营业状态设置"><span class="trm-toc-number">20.</span> <span class="trm-toc-text">店铺营业状态设置</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-9"><span class="trm-toc-number">20.0.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-3" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码-8"><span class="trm-toc-number">20.0.2.</span> <span class="trm-toc-text">代码</span></a></li><li class="trm-toc-item trm-toc-level-3" title="完善"><a rel="nofollow" class="trm-toc-link" href="#完善-3"><span class="trm-toc-number">20.0.3.</span> <span class="trm-toc-text">完善</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="HttpClient"><a rel="nofollow" class="trm-toc-link" href="#HttpClient"><span class="trm-toc-number">21.</span> <span class="trm-toc-text">HttpClient</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="介绍"><a rel="nofollow" class="trm-toc-link" href="#介绍-1"><span class="trm-toc-number">21.1.</span> <span class="trm-toc-text">介绍</span></a></li><li class="trm-toc-item trm-toc-level-2" title="入门案例"><a rel="nofollow" class="trm-toc-link" href="#入门案例"><span class="trm-toc-number">21.2.</span> <span class="trm-toc-text">入门案例</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="微信小程序"><a rel="nofollow" class="trm-toc-link" href="#微信小程序"><span class="trm-toc-number">22.</span> <span class="trm-toc-text">微信小程序</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="介绍"><a rel="nofollow" class="trm-toc-link" href="#介绍-2"><span class="trm-toc-number">22.1.</span> <span class="trm-toc-text">介绍</span></a></li><li class="trm-toc-item trm-toc-level-2" title="准备工作"><a rel="nofollow" class="trm-toc-link" href="#准备工作"><span class="trm-toc-number">22.2.</span> <span class="trm-toc-text">准备工作</span></a></li><li class="trm-toc-item trm-toc-level-2" title="入门案例"><a rel="nofollow" class="trm-toc-link" href="#入门案例-1"><span class="trm-toc-number">22.3.</span> <span class="trm-toc-text">入门案例</span></a></li><li class="trm-toc-item trm-toc-level-2" title="微信登陆"><a rel="nofollow" class="trm-toc-link" href="#微信登陆"><span class="trm-toc-number">22.4.</span> <span class="trm-toc-text">微信登陆</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析"><span class="trm-toc-number">22.4.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="商品浏览"><a rel="nofollow" class="trm-toc-link" href="#商品浏览"><span class="trm-toc-number">22.5.</span> <span class="trm-toc-text">商品浏览</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-1"><span class="trm-toc-number">22.5.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="菜品缓存"><a rel="nofollow" class="trm-toc-link" href="#菜品缓存"><span class="trm-toc-number">22.6.</span> <span class="trm-toc-text">菜品缓存</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="问题说明"><a rel="nofollow" class="trm-toc-link" href="#问题说明"><span class="trm-toc-number">22.6.1.</span> <span class="trm-toc-text">问题说明</span></a></li><li class="trm-toc-item trm-toc-level-3" title="实现思路"><a rel="nofollow" class="trm-toc-link" href="#实现思路-1"><span class="trm-toc-number">22.6.2.</span> <span class="trm-toc-text">实现思路</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="缓存套餐"><a rel="nofollow" class="trm-toc-link" href="#缓存套餐"><span class="trm-toc-number">22.7.</span> <span class="trm-toc-text">缓存套餐</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="Spring Cache"><a rel="nofollow" class="trm-toc-link" href="#Spring-Cache"><span class="trm-toc-number">23.</span> <span class="trm-toc-text">Spring Cache</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="实现思路"><a rel="nofollow" class="trm-toc-link" href="#实现思路-2"><span class="trm-toc-number">23.0.1.</span> <span class="trm-toc-text">实现思路</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="添加购物车"><a rel="nofollow" class="trm-toc-link" href="#添加购物车"><span class="trm-toc-number">23.1.</span> <span class="trm-toc-text">添加购物车</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-2"><span class="trm-toc-number">23.1.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="查看购物车"><a rel="nofollow" class="trm-toc-link" href="#查看购物车"><span class="trm-toc-number">23.2.</span> <span class="trm-toc-text">查看购物车</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-3"><span class="trm-toc-number">23.2.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="清空购物车"><a rel="nofollow" class="trm-toc-link" href="#清空购物车"><span class="trm-toc-number">23.3.</span> <span class="trm-toc-text">清空购物车</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-4"><span class="trm-toc-number">23.3.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="地址簿"><a rel="nofollow" class="trm-toc-link" href="#地址簿"><span class="trm-toc-number">23.4.</span> <span class="trm-toc-text">地址簿</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-5"><span class="trm-toc-number">23.4.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="用户下单"><a rel="nofollow" class="trm-toc-link" href="#用户下单"><span class="trm-toc-number">23.5.</span> <span class="trm-toc-text">用户下单</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-6"><span class="trm-toc-number">23.5.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="订单支付"><a rel="nofollow" class="trm-toc-link" href="#订单支付"><span class="trm-toc-number">23.6.</span> <span class="trm-toc-text">订单支付</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="流程"><a rel="nofollow" class="trm-toc-link" href="#流程"><span class="trm-toc-number">23.6.1.</span> <span class="trm-toc-text">流程</span></a></li><li class="trm-toc-item trm-toc-level-3" title="微信支付准备工作"><a rel="nofollow" class="trm-toc-link" href="#微信支付准备工作"><span class="trm-toc-number">23.6.2.</span> <span class="trm-toc-text">微信支付准备工作</span></a></li></ol></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="Spring Task"><a rel="nofollow" class="trm-toc-link" href="#Spring-Task"><span class="trm-toc-number">24.</span> <span class="trm-toc-text">Spring Task</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="介绍"><a rel="nofollow" class="trm-toc-link" href="#介绍-3"><span class="trm-toc-number">24.1.</span> <span class="trm-toc-text">介绍</span></a></li><li class="trm-toc-item trm-toc-level-2" title="cron表达式"><a rel="nofollow" class="trm-toc-link" href="#cron表达式"><span class="trm-toc-number">24.2.</span> <span class="trm-toc-text">cron表达式</span></a></li><li class="trm-toc-item trm-toc-level-2" title="入门案例"><a rel="nofollow" class="trm-toc-link" href="#入门案例-2"><span class="trm-toc-number">24.3.</span> <span class="trm-toc-text">入门案例</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="订单状态定时处理"><a rel="nofollow" class="trm-toc-link" href="#订单状态定时处理"><span class="trm-toc-number">25.</span> <span class="trm-toc-text">订单状态定时处理</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-7"><span class="trm-toc-number">25.1.</span> <span class="trm-toc-text">需求分析</span></a></li><li class="trm-toc-item trm-toc-level-2" title="代码"><a rel="nofollow" class="trm-toc-link" href="#代码-9"><span class="trm-toc-number">25.2.</span> <span class="trm-toc-text">代码</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="WebSocket（网络协议）"><a rel="nofollow" class="trm-toc-link" href="#WebSocket（网络协议）"><span class="trm-toc-number">26.</span> <span class="trm-toc-text">WebSocket（网络协议）</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="介绍"><a rel="nofollow" class="trm-toc-link" href="#介绍-4"><span class="trm-toc-number">26.1.</span> <span class="trm-toc-text">介绍</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="来单提醒"><a rel="nofollow" class="trm-toc-link" href="#来单提醒"><span class="trm-toc-number">27.</span> <span class="trm-toc-text">来单提醒</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-8"><span class="trm-toc-number">27.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="客户催单"><a rel="nofollow" class="trm-toc-link" href="#客户催单"><span class="trm-toc-number">28.</span> <span class="trm-toc-text">客户催单</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-9"><span class="trm-toc-number">28.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="Apache ECharts（前端的技术）"><a rel="nofollow" class="trm-toc-link" href="#Apache-ECharts（前端的技术）"><span class="trm-toc-number">29.</span> <span class="trm-toc-text">Apache ECharts（前端的技术）</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="介绍"><a rel="nofollow" class="trm-toc-link" href="#介绍-5"><span class="trm-toc-number">29.1.</span> <span class="trm-toc-text">介绍</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="营业额统计"><a rel="nofollow" class="trm-toc-link" href="#营业额统计"><span class="trm-toc-number">30.</span> <span class="trm-toc-text">营业额统计</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-10"><span class="trm-toc-number">30.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="用户统计"><a rel="nofollow" class="trm-toc-link" href="#用户统计"><span class="trm-toc-number">31.</span> <span class="trm-toc-text">用户统计</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-11"><span class="trm-toc-number">31.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="订单统计"><a rel="nofollow" class="trm-toc-link" href="#订单统计"><span class="trm-toc-number">32.</span> <span class="trm-toc-text">订单统计</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-12"><span class="trm-toc-number">32.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="销量排名统计"><a rel="nofollow" class="trm-toc-link" href="#销量排名统计"><span class="trm-toc-number">33.</span> <span class="trm-toc-text">销量排名统计</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-13"><span class="trm-toc-number">33.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="工作台"><a rel="nofollow" class="trm-toc-link" href="#工作台"><span class="trm-toc-number">34.</span> <span class="trm-toc-text">工作台</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析"><a rel="nofollow" class="trm-toc-link" href="#需求分析-14"><span class="trm-toc-number">34.1.</span> <span class="trm-toc-text">需求分析</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="ApachePOI"><a rel="nofollow" class="trm-toc-link" href="#ApachePOI"><span class="trm-toc-number">35.</span> <span class="trm-toc-text">ApachePOI</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="ApachePOl_入门案例_"><a rel="nofollow" class="trm-toc-link" href="#ApachePOl-入门案例"><span class="trm-toc-number">35.1.</span> <span class="trm-toc-text">ApachePOl_入门案例_</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-1" title="导出运营数据Excel报表"><a rel="nofollow" class="trm-toc-link" href="#导出运营数据Excel报表"><span class="trm-toc-number">36.</span> <span class="trm-toc-text">导出运营数据Excel报表</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="需求分析和设计"><a rel="nofollow" class="trm-toc-link" href="#需求分析和设计-10"><span class="trm-toc-number">36.1.</span> <span class="trm-toc-text">需求分析和设计</span></a></li><li class="trm-toc-item trm-toc-level-2" title="代码开发"><a rel="nofollow" class="trm-toc-link" href="#代码开发"><span class="trm-toc-number">36.2.</span> <span class="trm-toc-text">代码开发</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+    <div class="trm-search-popup">
+        <div class="trm-search-wrapper">
+            <div class="form trm-search-form">
+                <div class="trm-search-input-icon">
+                    <i class="iconfont fas fa-search"></i>
+                </div>
+                <input class="trm-search-input" type="text" placeholder="搜索文章...">
+                <div class="trm-search-btn-close">
+                    <i class="iconfont fas fa-times"></i>
+                </div>
+            </div>
+            <div class="trm-search-result-container">
+                <div class="trm-search-empty">
+                    请输入关键词进行搜索
+                </div>
+            </div>
+            <div class="trm-search-footer">
+                <div class="trm-search-stats"></div>
+                <ul class="trm-search-commands">
+                    <li>
+                        <kbd class="command-palette-commands-key">
+                            <svg width="15" height="15" aria-label="Escape key" role="img">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.2">
+                                    <path
+                                        d="M13.6167 8.936c-.1065.3583-.6883.962-1.4875.962-.7993 0-1.653-.9165-1.653-2.1258v-.5678c0-1.2548.7896-2.1016 1.653-2.1016.8634 0 1.3601.4778 1.4875 1.0724M9 6c-.1352-.4735-.7506-.9219-1.46-.8972-.7092.0246-1.344.57-1.344 1.2166s.4198.8812 1.3445.9805C8.465 7.3992 8.968 7.9337 9 8.5c.032.5663-.454 1.398-1.4595 1.398C6.6593 9.898 6 9 5.963 8.4851m-1.4748.5368c-.2635.5941-.8099.876-1.5443.876s-1.7073-.6248-1.7073-2.204v-.4603c0-1.0416.721-2.131 1.7073-2.131.9864 0 1.6425 1.031 1.5443 2.2492h-2.956">
+                                    </path>
+                                </g>
+                            </svg>
+                        </kbd>
+                        <span class="command-palette-Label">to close</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.2.6"></script>
+    
+
+    
+        
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js"></script>
+
+        <script src="/js/plugins/local_search.js?v=2.2.6"></script>
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+		
+			<script src="/js/plugins/danmu.js?v=2.2.6"></script>
+		
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.2.6"></script>
+
+<!-- CDN -->
+
+
+    
+<script src="/js/danmu.js"></script>
+
+
+    
+
+    
+
+
+
+</body>
+
+</html>
